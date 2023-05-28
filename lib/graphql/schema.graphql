@@ -1,0 +1,29 @@
+type Query {
+  listUsers(limit: Int, nextToken: String): UserConnection
+}
+
+type Mutation {
+  createUser(input: UserInput!): User
+}
+
+type Subscription {
+  onCreateUser: User @aws_subscribe(mutations: ["createUser"])
+}
+
+type User {
+  userId: ID!
+  firstName: String!
+  lastName: String!
+  picture: String!
+}
+
+type UserConnection {
+  items: [User!]
+  nextToken: String
+}
+
+input UserInput {
+  firstName: String!
+  lastName: String!
+  picture: String!
+}
