@@ -31,16 +31,18 @@ To deploy an API for client usage, we can use the following command.
 
 - `cdk deploy --outputs-file ./output.json`
   => The output.json file is generated containing the necessary configuration information for the client
-  On the frontend, use of the AWS Amplify JS libraries are used to connect our frontend to our backend by means of the Amplify.configure method (sample data configs are used):
+- On the frontend, use of the AWS Amplify JS libraries are used to connect our frontend to our backend by means of the Amplify.configure method (sample data configs are used):
 
-```typescript
-Amplify.configure({
-  aws_project_region: "ap-northeast-1",
-  aws_appsync_graphqlEndpoint: "your aws_appsync_graphqlEndpoint",
-  aws_appsync_region: "ap-northeast-1",
-  aws_appsync_authenticationType: "API_KEY",
-  aws_appsync_apiKey: "your aws_appsync_apiKey",
-});
+- ```typescript
+  Amplify.configure({
+    aws_project_region: "ap-northeast-1",
+    aws_appsync_graphqlEndpoint: "your aws_appsync_graphqlEndpoint",
+    aws_appsync_region: "ap-northeast-1",
+    aws_appsync_authenticationType: "API_KEY",
+    aws_appsync_apiKey: "your aws_appsync_apiKey",
+  });
+  ```
+
 ```
 
 This is a blank project for CDK development with TypeScript.
@@ -55,3 +57,4 @@ The `cdk.json` file tells the CDK Toolkit how to execute your app.
 - `cdk deploy` deploy this stack to your default AWS account/region
 - `cdk diff` compare deployed stack with current state
 - `cdk synth` emits the synthesized CloudFormation template
+```
