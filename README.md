@@ -43,7 +43,7 @@ To deploy an API for client usage, we can use the following command.
   });
   ```
 
-- to generate sql schema on the frontend, run the following commands in your terminal:
+- to generate graphql schema on the frontend, run the following commands in your terminal:
   - `npm i -g @aws-amplify/cli -g`
   - `amplify init -y`
   - `amplify add codegen --apiId YOUR-API-ID`
